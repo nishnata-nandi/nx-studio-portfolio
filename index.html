@@ -1,23 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Greeter</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NX Studio | Strategic Innovation & CX</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    :root {
+      --bg: #0c0c0c;
+      --text: #fdfcf9;
+      --accent: #d4af37;
+      --card-bg: #1a1a1a;
+      --deep-red: #6a1b1b;
+      --emerald: #154734;
+ background: linear-gradient(to bottom, rgba(12,12,12,0.95), rgba(12,12,12,1)), url('images/mainBack.png&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, rgba(12,12,12,0.95), rgba(12,12,12,1)), url('/mnt/data/ac35b90f-4247-4dbe-aa88-e0d10bf5fa4c.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+background-color: var(--card-bg);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem;
+      overflow-x: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+transition: all 0.3s ease;
+      position: relativ
+      flex: 1 1 20%;
+      min-width: 250px;
+      max-width: 300px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .expand {
+      display: none;
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .card.active .expand {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .expand a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .details-section {
+      padding: 2rem 3rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .details-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+    }
+
+    .offering-section {
+      padding: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 1rem;
+      margin: 2rem;
+    }
+
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .key-points .point {
+      background-color: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .key-points .point:hover {
+      transform: translateY(-5px);
+    }
+
+    .key-points img {
+      width: 48px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(26, 26, 26, 0.9);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>	
+  
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome</h1>
-        <div class="input-section">
-            <input type="text" id="nameInput" placeholder="Enter your name">
-            <div class="button-group">
-                <button id="submitBtn">Submit</button>
-                <button id="resetBtn">Reset</button>
-            </div>
-        </div>
-        <div id="greetingMessage" class="greeting-message"></div>
+  <header>
+    <h1>NX Studio</h1>
+    <p>Strategic Innovation for Modern Brands</p>
+  </header>
+
+  <section class="services">
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Product Expansion & Growth</h3>
+      <p>Entering new markets with confidence.</p>
+      <div class="expand">
+        <p>From vision to localization—we tailor expansion to your needs, globally or locally.</p>
+        <a href="#service-1">Know More →</a>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <div class="card">
+      <h3>Agile & SAFe Coaching</h3>
+      <p>Empowering agile teams at scale.</p>
+      <div class="expand">
+        <p>Hands-on coaching in Agile methodologies and SAFe frameworks to foster collaboration, efficiency, and value delivery across remote and hybrid teams.</p>
+        <a href="#service2">Know More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Customer Experience (CX)</h3>
+      <p>Design experiences that delight.</p>
+      <div class="expand">
+        <p>We optimize omnichannel CX strategies with deep journey mapping, feedback loops, and data-driven decisions for maximum engagement and retention.</p>
+        <a href="#service3">Know More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Customer Psychology</h3>
+      <p>Unlock the mind behind the metrics.</p>
+      <div class="expand">
+        <p>Using behavioral science and UX psychology, we help businesses influence user actions ethically while building brand trust and loyalty.</p>
+        <a href="#service4">Know More →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Offering Sections -->
+  <section id="service-1" class="offering-section" data-aos="fade-up">
+    <h2>🚀 Driving Market Growth & Expansion</h2>
+    <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, every step is tailored to your brand’s ambition.</p>
+    <div class="key-points">
+      <div class="point" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Vision icon" />
+        <p><strong>Define Your Vision</strong><br>Align on outcomes & success metrics that guide expansion.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Map icon" />
+        <p><strong>Pinpoint Growth Markets</strong><br>Use smart frameworks to identify high-opportunity regions.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Customer icon" />
+        <p><strong>Know Your Next Customer</strong><br>Understand behaviors, barriers & desires in each market.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Globe icon" />
+        <p><strong>Localize to Scale</strong><br>Adapt product, content & ops for cultural + legal fit.</p>
+      </div>
+    </div>
+    <p><a href="#contact">Let's co-create your growth story →</a></p>
+  </section>
+
+  <section id="service-2" class="offering-section" data-aos="fade-up">
+    <h2>🔧 Agile & SAFe Coaching</h2>
+    <p>I enable digital teams to thrive with agile principles that scale. My coaching builds clarity, ownership, and delivery velocity—whether you're SAFe, Scrum, or somewhere in between.</p>
+    <div class="key-points">
+      <div class="point" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="Mindset icon" />
+        <p><strong>Shape Agile Mindsets</strong><br>Empower individuals with principles, not just rituals.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://cdn-icons-png.flaticon.com/512/5954/5954872.png" alt="Team icon" />
+        <p><strong>Scale Team Agility</strong><br>Build collaborative systems across squads & programs.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://cdn-icons-png.flaticon.com/512/2784/2784461.png" alt="Metrics icon" />
+        <p><strong>Measure What Matters</strong><br>Track value over velocity to ensure outcomes.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://cdn-icons-png.flaticon.com/512/1051/1051321.png" alt="Coach icon" />
+        <p><strong>Coach with Context</strong><br>Facilitate retros, PI planning, and org transformation.</p>
+      </div>
+    </div>
+    <p><a href="#contact">Get agile with intention →</a></p>
+  </section>
+
+  <section id="service-3" class="offering-section" data-aos="fade-up">
+    <h2>🎯 Customer Experience Optimization</h2>
+    <p>I design seamless, data-informed journeys that elevate your brand and deepen customer trust. From journey mapping to CX metrics, your user becomes the heart of your strategy.</p>
+    <div class="key-points">
+      <div class="point" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Journey icon" />
+        <p><strong>Map the Full Journey</strong><br>Uncover friction & magic across every touchpoint.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Feedback icon" />
+        <p><strong>Close Feedback Loops</strong><br>Collect & act on real-time signals and sentiments.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909769.png" alt="UX icon" />
+        <p><strong>Orchestrate Omnichannel</strong><br>Deliver consistent UX across digital & human channels.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Metrics icon" />
+        <p><strong>Optimize via Data</strong><br>Use CSAT, NPS, and CLTV to drive decisions.</p>
+      </div>
+    </div>
+    <p><a href="#contact">Make your CX unforgettable →</a></p>
+  </section>
+
+  <section id="service-4" class="offering-section" data-aos="fade-up">
+    <h2>🧠 Customer Psychology Consulting</h2>
+    <p>I help you understand the science behind customer decisions—using behavioral design to ethically influence actions and build lasting loyalty.</p>
+    <div class="key-points">
+      <div class="point" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Behavior icon" />
+        <p><strong>Decode Behavior</strong><br>Use behavioral frameworks to understand decision-making.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://cdn-icons-png.flaticon.com/512/1973/1973941.png" alt="Bias icon" />
+        <p><strong>Design with Bias in Mind</strong><br>Shape interfaces that work with human instincts.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://cdn-icons-png.flaticon.com/512/2840/2840175.png" alt="Trust icon" />
+        <p><strong>Build Brand Trust</strong><br>Create emotional resonance & loyalty through design.</p>
+      </div>
+      <div class="point" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://cdn-icons-png.flaticon.com/512/4701/4701510.png" alt="Trigger icon" />
+        <p><strong>Use Ethical Nudges</strong><br>Drive behavior through intentional and respectful cues.</p>
+      </div>
+    </div>
+    <p><a href="#contact">Tap into customer psychology →</a></p>
+  </section>
+
+
+
+
+
+  <footer>
+    <p>Contact: <a href="mailto:nandinishnata@gmail.com">nandinishnata@gmail.com</a> | <a href="https://www.linkedin.com/in/nishnata-nandi-74435973" target="_blank">LinkedIn</a></p>
+    <p>&copy; 2025 NX Studio. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+    AOS.init();
+    function toggleCard(card) {
+      const isActive = card.classList.contains('active');
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+      if (!isActive) card.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
