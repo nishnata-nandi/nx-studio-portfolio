@@ -207,6 +207,171 @@
       line-height: 1.6;
       max-width: 700px;
     }
+
+.subheading {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--text-muted);
+}
+
+.expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.expansion-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.expansion-card:hover {
+  transform: translateY(-5px);
+}
+
+.expansion-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.expansion-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.cta-line {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  z-index: 1001;
+  border-bottom: 1px solid #333;
+}
+
+.sticky-header .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links a {
+  color: var(--text-light);
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Banner Style */
+.hero-banner-area {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: #222;
+}
+
+.hero-banner-text {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+.hero-banner-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.hero-banner-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Carousel */
+.carousel-title {
+  font-size: 1.2rem;
+  margin: 30px 0 15px 0;
+  color: var(--text-muted);
+}
+
+.offerings-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.offer-tile {
+  min-width: 240px;
+  height: 140px;
+  background-color: #444;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.offer-tile h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.offer-tile p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
   </style>
 </head>
 <body>
@@ -267,29 +432,171 @@
   </section>
 
   <!-- Fullscreen Sections -->
-  <div id="section1" class="overlay-section">
-    <button class="back-btn" onclick="hideSections()">Back</button>
-    <h2>Product Expansion & Growth</h2>
-    <p>We provide strategic guidance to help you confidently enter new markets, scale efficiently, and unlock new revenue opportunities while ensuring alignment with your core values and customer expectations.</p>
+ <!-- Sticky Header -->
+<!--<header class="sticky-header">
+  <div class="logo">NXZ</div>
+  <nav class="nav-links">
+    <a href="#section1">Product Growth</a>
+    <a href="#section2">Agile Guide</a>
+    <a href="#section3">Customer Experience</a>
+    <a href="#section4">Customer Psychology</a>
+  </nav>
+</header> -->
+
+<!-- Section 1: Product Growth Fullscreen -->
+<div id="section1" class="overlay-section">
+  <button class="back-btn" onclick="hideSections()">Back</button>
+
+  <!-- Hero Banner Area -->
+  <div class="hero-banner-area">
+    <!-- Add your background image to this div via CSS -->
+    <!-- Example: background-image: url('your-image.jpg') -->
+    <div class="hero-banner-text">
+      <h2>🚀 Driving Market Growth & Expansion</h2>
+      <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, we tailor every step to your brand’s ambition.</p>
+    </div>
   </div>
 
-  <div id="section2" class="overlay-section">
-    <button class="back-btn" onclick="hideSections()">Back</button>
-    <h2>Agile & SAFe Coaching</h2>
-    <p>We coach agile teams and enterprises to operate with clarity and speed at scale. Our certified coaches help instill agile values and SAFe practices across programs for tangible transformation.</p>
+  <!-- Offerings Carousel Style -->
+  <h3 class="carousel-title">Included under this section</h3>
+  <div class="offerings-carousel">
+    <div class="offer-tile" style="background-image: url('vision.jpg');">
+      <!-- Replace vision.jpg with your image -->
+      <h4>Define Your Vision</h4>
+      <p>Align on outcomes & success metrics that guide expansion</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('markets.jpg');">
+      <!-- Replace markets.jpg -->
+      <h4>Pinpoint Growth Markets</h4>
+      <p>Use smart frameworks to identify high-opportunity regions</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('customer.jpg');">
+      <!-- Replace customer.jpg -->
+      <h4>Know Your Next Customer</h4>
+      <p>Understand behaviors, barriers & desires in each market</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('localize.jpg');">
+      <!-- Replace localize.jpg -->
+      <h4>Localize to Scale</h4>
+      <p>Adapt product, content & ops for cultural + legal fit</p>
+    </div>
   </div>
 
-  <div id="section3" class="overlay-section">
-    <button class="back-btn" onclick="hideSections()">Back</button>
-    <h2>Customer Experience (CX)</h2>
-    <p>We design seamless end-to-end experiences that delight customers and improve loyalty. Our CX strategies are rooted in behavioral research, storytelling, and thoughtful interaction design.</p>
+  <!-- Work Gallery -->
+  <h3 class="carousel-title">Previous Work</h3>
+  <div class="gallery-grid">
+    <!-- Add multiple images below -->
+    <img src="work1.jpg" alt="Work Sample 1" onclick="expandImage(this)">
+    <img src="work2.jpg" alt="Work Sample 2" onclick="expandImage(this)">
+    <img src="work3.jpg" alt="Work Sample 3" onclick="expandImage(this)">
+    <!-- etc -->
+  </div>
+</div>
+
+
+ <!-- Section 2: Agile Guide -->
+<div id="section2" class="overlay-section">
+  <button class="back-btn" onclick="hideSections()">Back</button>
+
+  <!-- Hero Banner Area -->
+  <div class="hero-banner-area" style="background-image: url('agile-banner.jpg');">
+    <!-- Replace agile-banner.jpg with actual image -->
+    <div class="hero-banner-text">
+      <h2>✨ Agile & SAFe Coaching</h2>
+      <p>Empowering Agile Transformation at Scale</p>
+    </div>
   </div>
 
-  <div id="section4" class="overlay-section">
-    <button class="back-btn" onclick="hideSections()">Back</button>
-    <h2>Customer Psychology</h2>
-    <p>We unlock what drives decision-making and emotions in your audience through behavioral insights, psychometrics, and neurodesign — creating messaging and UX that resonates deeply.</p>
+  <!-- Offerings -->
+  <h3 class="carousel-title">Included under this section</h3>
+  <div class="offerings-carousel">
+    <div class="offer-tile" style="background-image: url('agile-roadmap.jpg');">
+      <h4>🌀 Tailored Agile Roadmaps</h4>
+      <p>Create a practical roadmap that fits your structure and Agile maturity.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('team-coaching.jpg');">
+      <h4>🤝 Team Enablement & Leadership Coaching</h4>
+      <p>Support across all roles — from Product Owners to Release Train Engineers</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('coaching-outcomes.jpg');">
+      <h4>📊 Outcomes-Driven Coaching</h4>
+      <p>Continuous delivery and fast feedback loops to measure business impact</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('remote-agile.jpg');">
+      <h4>🧭 Remote-Ready Frameworks</h4>
+      <p>Fully remote or hybrid? No problem. Systems that adapt to your workforce model.</p>
+    </div>
   </div>
+</div>
+
+
+<!-- Section 3: Customer Experience -->
+<div id="section3" class="overlay-section">
+  <button class="back-btn" onclick="hideSections()">Back</button>
+
+  <div class="hero-banner-area" style="background-image: url('cx-banner.jpg');">
+    <!-- Replace cx-banner.jpg -->
+    <div class="hero-banner-text">
+      <h2>✨ Customer Experience (CX) Optimization</h2>
+      <p>Designing Experiences That Spark Loyalty</p>
+    </div>
+  </div>
+
+  <h3 class="carousel-title">Included under this section</h3>
+  <div class="offerings-carousel">
+    <div class="offer-tile" style="background-image: url('journey-mapping.jpg');">
+      <h4>🌐 Omnichannel Journey Mapping</h4>
+      <p>Unify your customer's journey into one seamless story.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('cx-strategy.jpg');">
+      <h4>🧠 Data-Led CX Strategy</h4>
+      <p>We turn NPS, CSAT, and behavior analytics into clear actions.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('ux-audit.jpg');">
+      <h4>🖼️ UX Audits & Prototypes</h4>
+      <p>Spot friction. Build solutions. Fast.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('engagement-levers.jpg');">
+      <h4>🎯 Retention & Engagement Levers</h4>
+      <p>Lifecycle optimization, personalization, and emotional hooks.</p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Section 4: Customer Psychology -->
+<div id="section4" class="overlay-section">
+  <button class="back-btn" onclick="hideSections()">Back</button>
+
+  <div class="hero-banner-area" style="background-image: url('psych-banner.jpg');">
+    <!-- Replace psych-banner.jpg -->
+    <div class="hero-banner-text">
+      <h2>✨ Customer Psychology Consulting</h2>
+      <p>Decode the Mind. Design for Meaning.</p>
+    </div>
+  </div>
+
+  <h3 class="carousel-title">Included under this section</h3>
+  <div class="offerings-carousel">
+    <div class="offer-tile" style="background-image: url('behavioral-insights.jpg');">
+      <h4>🧬 Behavioral Science Insights</h4>
+      <p>Craft persuasive, ethical journeys using decision science.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('mindset-mapping.jpg');">
+      <h4>🕵️ Motivations & Mindset Mapping</h4>
+      <p>Uncover what your users really want —qualitative studies and behavior models.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('neurodesign.jpg');">
+      <h4>🧪 Neurodesign & Emotional Triggers</h4>
+      <p>Design interfaces and messages that connect emotionally.</p>
+    </div>
+    <div class="offer-tile" style="background-image: url('trust-personalization.jpg');">
+      <h4>🔁 Trust-Centric Personalization</h4>
+      <p>Combine data with empathy to deliver delight.</p>
+    </div>
+  </div>
+</div>
+
 
   <script>
     function showSection(id) {
