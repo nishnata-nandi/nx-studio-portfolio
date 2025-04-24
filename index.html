@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NXZ Studio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
 <link rel="stylesheet" href="styles.css" />
 
 </head>
@@ -21,8 +24,8 @@
   <section class="hero">
     <div class="hero-content">
       <h1>NXZ Studio</h1>
-      <p>Creative. Impactful. Visionary.<br>Your brand, reimagined with purpose.</p>
-	 <p>Website is currently WIP, adding new services!</p>
+ 	<p>By Nishnata Nandi</p>
+      <p>Creative. Impactful. Transformative.<br>Your brand, reimagined with purpose.</p>
       <div class="hero-buttons">
         <button class="btn-primary">Know More</button>
         <button class="btn-secondary">Get in Touch</button>
@@ -32,7 +35,7 @@
 
   <!-- Services -->
   <section class="offers-section">
-    <h2>Our Services</h2>
+    <h2>Services Offered</h2>
     <div class="offers-row">
       <div class="offer-card" onclick="showSection('section1')">
         <div class="offer-image" style="background-image: url('images/product-expansion1.jpg');"></div>
@@ -65,6 +68,22 @@
     </div>
   </section>
 
+<!-- Place this at the bottom of your body -->
+<section id="more-info" class="more-info-section hidden">
+  <div class="more-info-content">
+    <h2>About NXZ Studio</h2>
+    <p>Hi, I’m Nishnata—a digital strategy and CX consultant, living in Germany, with 12+ years leading growth for luxury and tech giants across the globe. This space is where I bring that experience to you—whether you're scaling markets, refining CX, or diving into customer psychology. </p>
+    <p>Let’s co-create meaningful, high-impact journeys that move your brand forward.</p>
+<p>
+  Contact me via 
+  <a href="tel:+4915237224651">phone</a> 
+  or 
+  <a href="mailto:nandinishnata@gmail.com">email</a>
+</p>
+  </div>
+</section>
+
+
   <!-- Fullscreen Sections -->
  <!-- Sticky Header -->
 <!--<header class="sticky-header">
@@ -79,13 +98,14 @@
 
 <!-- Section 1: Product Growth Fullscreen -->
 <div id="section1" class="overlay-section">
+  <img src="images/brand-logo.jpg" alt="Brand Logo" class="brand-logo">
   <button class="back-btn" onclick="hideSections()">Back</button>
 
   <!-- Hero Banner Area -->
 <div class="hero-carousel-bg" style="background-image: url('images/market-growth.jpg');">
   <div class="hero-banner-area">
     <div class="hero-banner-text">
-      <h2>🚀 Driving Market Growth & Expansion</h2>
+      <h2>Driving Market Growth & Expansion</h2>
       <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, we tailor every step to your brand’s ambition.</p>
     </div>
   </div>
@@ -131,6 +151,8 @@
 
  <!-- Section 2: Agile Guide -->
 <div id="section2" class="overlay-section">
+ <img src="images/brand-logo.jpg" alt="Brand Logo" class="brand-logo">
+
   <button class="back-btn" onclick="hideSections()">Back</button>
 
   <!-- Hero Banner Area -->
@@ -178,6 +200,8 @@
 
 <!-- Section 3: Customer Experience -->
 <div id="section3" class="overlay-section">
+<img src="images/brand-logo.jpg" alt="Brand Logo" class="brand-logo">
+
   <button class="back-btn" onclick="hideSections()">Back</button>
 
 
@@ -225,6 +249,8 @@
 
  <!-- Section 4: Customer Psychology -->
 <div id="section4" class="overlay-section">
+<img src="images/brand-logo.jpg" alt="Brand Logo" class="brand-logo">
+
   <button class="back-btn" onclick="hideSections()">Back</button>
 
 
@@ -271,20 +297,49 @@
 
 
   <script>
-    function showSection(id) {
-      hideSections();
-      const section = document.getElementById(id);
-      section.classList.add('active');
-      setTimeout(() => section.style.opacity = '1', 10);
-    }
+  function showSection(id) {
+    hideSections();
+    const section = document.getElementById(id);
+    section.classList.add('active');
+    setTimeout(() => section.style.opacity = '1', 10);
+  }
 
-    function hideSections() {
-      document.querySelectorAll('.overlay-section').forEach(section => {
-        section.classList.remove('active');
-        section.style.opacity = '0';
-      });
+  function hideSections() {
+    document.querySelectorAll('.overlay-section').forEach(section => {
+      section.classList.remove('active');
+      section.style.opacity = '0';
+    });
+  }
+
+  // Know More button toggle for more info section
+  document.addEventListener('DOMContentLoaded', function () {
+  const knowMoreBtn = document.querySelector('.btn-primary');
+  const getInTouchBtn = document.querySelector('.btn-secondary');
+  const moreInfoSection = document.getElementById('more-info');
+
+  knowMoreBtn.addEventListener('click', function () {
+    moreInfoSection.classList.toggle('active');
+
+    // Scroll to section if now visible
+    if (moreInfoSection.classList.contains('active')) {
+      setTimeout(() => {
+        moreInfoSection.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // Slight delay to allow for transition to begin
     }
-  </script>
+  });
+
+  getInTouchBtn.addEventListener('click', function () {
+    moreInfoSection.classList.toggle('active');
+
+    // Scroll to section if now visible
+    if (moreInfoSection.classList.contains('active')) {
+      setTimeout(() => {
+        moreInfoSection.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // Slight delay to allow for transition to begin
+    }
+  });
+});
+</script>
 
 </body>
 </html>
