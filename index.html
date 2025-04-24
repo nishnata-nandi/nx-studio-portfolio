@@ -15,27 +15,35 @@
 
   <!-- Sidebar Icons -->
   <div class="sidebar">
+  <img src="images/brand-logo.jpg" alt="NXZ Studio Logo" class="sidebar-logo" />
+    <a href="#search" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
     <a href="mailto:nandinishnata@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
     <a href="tel:+1234567890" title="Phone"><i class="fa-solid fa-phone-flip"></i></a>
     <a href="#info" title="Info"><i class="fa-regular fa-circle-question"></i></a>
   </div>
-
+<div id="search-accordion" class="search-accordion hidden">
+  <input type="text" placeholder="Search by keyword..." class="search-input" />
+</div>
+ 
   <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-content">
       <h1>NXZ Studio</h1>
- 	<p>By Nishnata Nandi</p>
+ 	<p>By 
+ <a href="https://www.linkedin.com/in/nishnata-nandi-74435973/">
+Nishnata Nandi </a></p>
       <p>Creative. Impactful. Transformative.<br>Your brand, reimagined with purpose.</p>
       <div class="hero-buttons">
         <button class="btn-primary">Know More</button>
         <button class="btn-secondary">Get in Touch</button>
       </div>
+<p> Currently website is WIP- updating the services!</p>
     </div>
   </section>
 
   <!-- Services -->
   <section class="offers-section">
-    <h2>Services Offered</h2>
+    <h2>Skills Offered</h2>
     <div class="offers-row">
       <div class="offer-card" onclick="showSection('section1')">
         <div class="offer-image" style="background-image: url('images/product-expansion1.jpg');"></div>
@@ -72,7 +80,7 @@
 <section id="more-info" class="more-info-section hidden">
   <div class="more-info-content">
     <h2>About Me</h2>
-    <p>Hi, I’m Nishnata—a digital strategy and CX consultant, living in Germany, with 12+ years leading growth for luxury and tech giants across the globe. This space is where I bring that experience to you—whether you're scaling markets, refining CX, or diving into customer psychology. </p>
+    <p>Hi, I’m Nishnata—a digital strategy and CX consultant, living in Germany, with 12+ years leading growth for luxury and tech giants across the globe. This space is where I bring that experience to you—whether you're scaling markets, refining CX, diving into customer psychology or need Agile Project Management</p>
     <p>Let’s co-create meaningful, high-impact journeys that move your brand forward.</p>
 <p>
   Contact me via 
@@ -107,7 +115,7 @@
   <div class="hero-banner-area">
     <div class="hero-banner-text">
       <h2>Driving Market Growth & Expansion</h2>
-      <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, we tailor every step to your brand’s ambition.</p>
+      <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, we can together tailor every step to your product's ambition.</p>
     </div>
   </div>
 
@@ -162,7 +170,8 @@
     <!-- Replace agile-banner.jpg with actual image -->
     <div class="hero-banner-text">
       <h2>Agile & SAFe Coaching</h2>
-      <p>Empowering Agile Transformation at Scale</p>
+      <p>Empowering Agile Transformation at Scale. <br>
+I can support both as Agile Coach or as a Product Owner</p>
     </div>
   </div>
 
@@ -210,7 +219,7 @@
   <div class="hero-banner-area">
     <!-- Replace cx-banner.jpg -->
     <div class="hero-banner-text">
-      <h2> Customer Experience (CX) Optimization</h2>
+      <h2> CX Optimization</h2>
       <p>Designing Experiences That Spark Loyalty</p>
     </div>
   </div>
@@ -311,6 +320,17 @@
       section.style.opacity = '0';
     });
   }
+
+ // 🔍 Search Accordion Logic
+    const searchIcon = document.querySelector('.fa-magnifying-glass');
+    const searchAccordion = document.getElementById('search-accordion');
+
+    if (searchIcon && searchAccordion) {
+      searchIcon.addEventListener('click', () => {
+        searchAccordion.classList.toggle('show');
+        searchAccordion.classList.toggle('hidden');
+      });
+    }
 
   // Know More button toggle for more info section
   document.addEventListener('DOMContentLoaded', function () {
