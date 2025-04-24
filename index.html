@@ -22,7 +22,7 @@
     <div class="hero-content">
       <h1>NXZ Studio</h1>
       <p>Creative. Impactful. Visionary.<br>Your brand, reimagined with purpose.</p>
- <p>Website is currently WIP, adding new services!</p>
+	 <p>Website is currently WIP, adding new services!</p>
       <div class="hero-buttons">
         <button class="btn-primary">Know More</button>
         <button class="btn-secondary">Get in Touch</button>
@@ -35,28 +35,28 @@
     <h2>Our Services</h2>
     <div class="offers-row">
       <div class="offer-card" onclick="showSection('section1')">
-        <div class="offer-image"></div>
+        <div class="offer-image" style="background-image: url('images/product-expansion1.jpg');"></div>
         <div class="offer-content">
           <div class="offer-title">Product Expansion & Growth</div>
           <div class="offer-description">Entering new markets with confidence.</div>
         </div>
       </div>
       <div class="offer-card" onclick="showSection('section2')">
-        <div class="offer-image"></div>
+        <div class="offer-image" style="background-image: url('images/product-expansion2.jpg');"></div>
         <div class="offer-content">
           <div class="offer-title">Agile & SAFe Coaching</div>
           <div class="offer-description">Empowering agile teams at scale.</div>
         </div>
       </div>
       <div class="offer-card" onclick="showSection('section3')">
-        <div class="offer-image"></div>
+        <div class="offer-image" style="background-image: url('images/product-expansion3.jpg');"></div>
         <div class="offer-content">
           <div class="offer-title">Customer Experience (CX)</div>
           <div class="offer-description">Design experiences that delight.</div>
         </div>
       </div>
       <div class="offer-card" onclick="showSection('section4')">
-        <div class="offer-image"></div>
+        <div class="offer-image" style="background-image: url('images/product-expansion4.jpg');"></div>
         <div class="offer-content">
           <div class="offer-title">Customer Psychology</div>
           <div class="offer-description">Unlock the mind behind the metrics.</div>
@@ -82,19 +82,20 @@
   <button class="back-btn" onclick="hideSections()">Back</button>
 
   <!-- Hero Banner Area -->
+<div class="hero-carousel-bg" style="background-image: url('images/market-growth.jpg');">
   <div class="hero-banner-area">
-    <!-- Add your background image to this div via CSS -->
-    <!-- Example: background-image: url('your-image.jpg') -->
     <div class="hero-banner-text">
       <h2>🚀 Driving Market Growth & Expansion</h2>
       <p>Whether you're eyeing global markets or expanding into new customer segments, I help you scale with precision. From market prioritization to localized rollout, we tailor every step to your brand’s ambition.</p>
     </div>
   </div>
 
+
+
   <!-- Offerings Carousel Style -->
   <h3 class="carousel-title">Included under this section</h3>
   <div class="offerings-carousel">
-    <div class="offer-tile" style="background-image: url('vision.jpg');">
+    <div class="offer-tile" style="background-image: url('product-expansion1.jpg');">
       <!-- Replace vision.jpg with your image -->
       <h4>Define Your Vision</h4>
       <p>Align on outcomes & success metrics that guide expansion</p>
@@ -125,7 +126,7 @@
     <img src="work3.jpg" alt="Work Sample 3" onclick="expandImage(this)">
     <!-- etc -->
   </div>
-</div>
+</div> </div>
 
 
  <!-- Section 2: Agile Guide -->
@@ -133,10 +134,11 @@
   <button class="back-btn" onclick="hideSections()">Back</button>
 
   <!-- Hero Banner Area -->
-  <div class="hero-banner-area" style="background-image: url('agile-banner.jpg');">
+<div class="hero-carousel-bg" style="background-image: url('images/agile-coach.jpg');">
+  <div class="hero-banner-area">
     <!-- Replace agile-banner.jpg with actual image -->
     <div class="hero-banner-text">
-      <h2>✨ Agile & SAFe Coaching</h2>
+      <h2>Agile & SAFe Coaching</h2>
       <p>Empowering Agile Transformation at Scale</p>
     </div>
   </div>
@@ -161,17 +163,29 @@
       <p>Fully remote or hybrid? No problem. Systems that adapt to your workforce model.</p>
     </div>
   </div>
-</div>
 
+<!-- Work Gallery -->
+  <h3 class="carousel-title">Previous Work</h3>
+  <div class="gallery-grid">
+    <!-- Add multiple images below -->
+    <img src="work1.jpg" alt="Work Sample 1" onclick="expandImage(this)">
+    <img src="work2.jpg" alt="Work Sample 2" onclick="expandImage(this)">
+    <img src="work3.jpg" alt="Work Sample 3" onclick="expandImage(this)">
+    <!-- etc -->
+  </div>
+</div>
+</div>
 
 <!-- Section 3: Customer Experience -->
 <div id="section3" class="overlay-section">
   <button class="back-btn" onclick="hideSections()">Back</button>
 
-  <div class="hero-banner-area" style="background-image: url('cx-banner.jpg');">
+
+  <div class="hero-carousel-bg" style="background-image: url('images/customer-experience.jpg');">
+  <div class="hero-banner-area">
     <!-- Replace cx-banner.jpg -->
     <div class="hero-banner-text">
-      <h2>✨ Customer Experience (CX) Optimization</h2>
+      <h2> Customer Experience (CX) Optimization</h2>
       <p>Designing Experiences That Spark Loyalty</p>
     </div>
   </div>
@@ -195,6 +209,17 @@
       <p>Lifecycle optimization, personalization, and emotional hooks.</p>
     </div>
   </div>
+
+<!-- Work Gallery -->
+  <h3 class="carousel-title">Previous Work</h3>
+  <div class="gallery-grid">
+    <!-- Add multiple images below -->
+    <img src="work1.jpg" alt="Work Sample 1" onclick="expandImage(this)">
+    <img src="work2.jpg" alt="Work Sample 2" onclick="expandImage(this)">
+    <img src="work3.jpg" alt="Work Sample 3" onclick="expandImage(this)">
+    <!-- etc -->
+  </div>
+</div>
 </div>
 
 
@@ -202,10 +227,12 @@
 <div id="section4" class="overlay-section">
   <button class="back-btn" onclick="hideSections()">Back</button>
 
-  <div class="hero-banner-area" style="background-image: url('psych-banner.jpg');">
+
+  <div class="hero-carousel-bg" style="background-image: url('images/customer-psych.jpg');">
+  <div class="hero-banner-area">
     <!-- Replace psych-banner.jpg -->
     <div class="hero-banner-text">
-      <h2>✨ Customer Psychology Consulting</h2>
+      <h2>Customer Psychology Consulting</h2>
       <p>Decode the Mind. Design for Meaning.</p>
     </div>
   </div>
@@ -229,6 +256,17 @@
       <p>Combine data with empathy to deliver delight.</p>
     </div>
   </div>
+  <!-- Work Gallery -->
+  <h3 class="carousel-title">Previous Work</h3>
+  <div class="gallery-grid">
+    <!-- Add multiple images below -->
+    <img src="work1.jpg" alt="Work Sample 1" onclick="expandImage(this)">
+    <img src="work2.jpg" alt="Work Sample 2" onclick="expandImage(this)">
+    <img src="work3.jpg" alt="Work Sample 3" onclick="expandImage(this)">
+    <!-- etc -->
+  </div>
+
+</div>
 </div>
 
 
