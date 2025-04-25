@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile – NXZ Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #ddd;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color, #0070f3);
+    }
+
+    .hero {
+      background: url('images/hero-bg.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 20, 20, 1) 30%, rgba(20, 20, 20, 0.2));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      max-width: 700px;
+      color: var(--text-muted, #bbb);
+    }
+
+    .experience-section {
+      padding: 100px;
+      background-color: #111;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      border-left: 3px solid var(--primary-color, #0070f3);
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .timeline-year {
+      position: absolute;
+      left: -80px;
+      top: 0;
+      width: 60px;
+      text-align: right;
+      font-size: 1rem;
+      color: var(--text-muted, #888);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -13px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--primary-color, #0070f3);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 112, 243, 0.4);
+    }
+
+    .timeline-content h4 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .timeline-content ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .timeline-content li {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text-muted, #bbb);
+    }
+
+    footer {
+      padding: 40px 60px;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        padding: 40px 20px;
+        height: 50vh;
+      }
+      .experience-section {
+        padding: 40px 20px;
+      }
+    }
+
+.sidebar {
+  position: fixed;
+  top: 36%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 200;
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: auto;
+  margin-bottom: 300px;
+  border-radius: 6px;
+}
+
+.sidebar a {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.sidebar a:hover {
+  color: var(--text-light);
+  transform: scale(1.3);
+}
+.back-arrow {
+  position: fixed;
+  top: 40px;
+  left: 80px; /* placed slightly to the right of the sidebar */
+  font-size: 1.8rem;
+  color: var(--primary-color); /* make sure this is defined as red or set it manually */
+  z-index: 300;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-arrow:hover {
+  transform: scale(1.2);
+  color: #ff4c4c; /* subtle red on hover */
+}
+
+.back-arrow-btn {
+  position: fixed;
+  top: 40px;
+  left: 80px;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.8); /* bold red background */
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 300;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.back-arrow-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.9);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <img src="images/brand-logo.jpg" alt="NXZ Studio Logo" class="sidebar-logo" />
+  <a href="profile.html" title="Profile">  <i class="fa-solid fa-user"></i> </a>
+  <a href="mailto:nandinishnata@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+  <a href="tel:+1234567890" title="Phone"><i class="fa-solid fa-phone-flip"></i></a>
+  <a href="#info" title="Info"><i class="fa-regular fa-circle-question"></i></a>
+</div>
+
+<!-- Back button -->
+<a href="index.html" class="back-arrow-btn" title="Back to Home">
+  <i class="fa-solid fa-arrow-left"></i>
+</a>
+
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Nishnata Nandi</h1>
+      <p>12+ years shaping CX & tech innovation in luxury and ecommerce – globally across EU, Japan, India & UAE.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="experience-section">
+    <h2 class="section-title"><span class="highlight">Work Experience</span></h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Senior Program Manager – Amazon, Japan</h4>
+          <ul>
+            <li>Led Prime Day ops across 22-member team, hitting 30% daily volume growth.</li>
+            <li>Launched EV delivery network; advanced OPEX, branding & sustainability goals.</li>
+            <li>Revamped ML models, improving profitability by 18%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2019–24</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Product & CX Lead – Mercedes-Benz, Germany</h4>
+          <ul>
+            <li>Drove €20M ecommerce & luxury omnichannel CX strategy.</li>
+            <li>Delivered AI-powered recommendations; 34% faster GTM.</li>
+            <li>Secured €9M+ for product expansion across 7 markets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2017–18</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Senior Consultant – Virtusa, UAE</h4>
+          <ul>
+            <li>Led fintech digital strategy, driving ARR & SMB expansion.</li>
+            <li>Improved CSAT/retention; cut CAC by 37% in premium banking.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2011–16</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Developer – Infosys, Sapient, Cognizant</h4>
+          <ul>
+            <li>Built secure, omnichannel fintech platforms (AES, PCI/DSS).</li>
+            <li>Delivered global ecommerce for payment and banking giants.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 NXZ Studio. All rights reserved.
+  </footer>
+</body>
+</html>

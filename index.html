@@ -16,14 +16,15 @@
   <!-- Sidebar Icons -->
   <div class="sidebar">
   <img src="images/brand-logo.jpg" alt="NXZ Studio Logo" class="sidebar-logo" />
-    <a href="#search" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <a href="profile.html" title="Profile">  <i class="fa-solid fa-user"></i> </a>
+
     <a href="mailto:nandinishnata@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
     <a href="tel:+1234567890" title="Phone"><i class="fa-solid fa-phone-flip"></i></a>
     <a href="#info" title="Info"><i class="fa-regular fa-circle-question"></i></a>
   </div>
-<div id="search-accordion" class="search-accordion hidden">
-  <input type="text" placeholder="Search by keyword..." class="search-input" />
-</div>
+
+
+
  
   <!-- Hero Banner -->
   <section class="hero">
@@ -40,6 +41,7 @@ Nishnata Nandi </a></p>
 <p> Currently website is WIP- updating the services!</p>
     </div>
   </section>
+
 
   <!-- Services -->
   <section class="offers-section">
@@ -76,6 +78,8 @@ Nishnata Nandi </a></p>
     </div>
   </section>
 
+
+
 <!-- Place this at the bottom of your body -->
 <section id="more-info" class="more-info-section hidden">
   <div class="more-info-content">
@@ -92,18 +96,12 @@ Nishnata Nandi </a></p>
   </div>
 </section>
 
+ <footer>
+    &copy; 2025 NXZ Studio. All rights reserved.
+  </footer>
 
   <!-- Fullscreen Sections -->
- <!-- Sticky Header -->
-<!--<header class="sticky-header">
-  <div class="logo">NXZ</div>
-  <nav class="nav-links">
-    <a href="#section1">Product Growth</a>
-    <a href="#section2">Agile Guide</a>
-    <a href="#section3">Customer Experience</a>
-    <a href="#section4">Customer Psychology</a>
-  </nav>
-</header> -->
+ 
 
 <!-- Section 1: Product Growth Fullscreen -->
 <div id="section1" class="overlay-section">
@@ -321,16 +319,10 @@ I can support both as Agile Coach or as a Product Owner</p>
     });
   }
 
- // 🔍 Search Accordion Logic
-    const searchIcon = document.querySelector('.fa-magnifying-glass');
-    const searchAccordion = document.getElementById('search-accordion');
 
-    if (searchIcon && searchAccordion) {
-      searchIcon.addEventListener('click', () => {
-        searchAccordion.classList.toggle('show');
-        searchAccordion.classList.toggle('hidden');
-      });
-    }
+
+
+
 
   // Know More button toggle for more info section
   document.addEventListener('DOMContentLoaded', function () {
