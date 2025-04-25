@@ -127,7 +127,7 @@
     }
 
 .hero a {
-  color: white;
+  color: red;
   text-decoration: none;
 }
 
@@ -348,17 +348,18 @@
 .hero-banner-area {
   height: 60vh;
   background-size: cover;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); 
   background-position: top;
   display: flex;
   align-items: flex-end;
   padding: 40px;
   position: relative;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .hero-banner-text {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
   padding: 20px;
   border-radius: 8px;
   max-width: 700px;
@@ -399,7 +400,8 @@
 /* Carousel */
 .carousel-title {
   font-size: 1.2rem;
-  margin: 30px 0 15px 0;
+  margin: 0 0 15px 0;
+  padding-top: 20px;
   color: var(--text-muted);
 }
 
@@ -408,7 +410,15 @@
   overflow-x: auto;
   gap: 16px;
   padding-bottom: 20px;
+  justify-content: space-between; /* Ensure equal spacing */
+  flex-wrap: wrap; /* Allow wrapping if space is constrained */
+
 }
+
+.included-section {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)); 
+}
+
 
 .offer-tile {
   min-width: 240px;
@@ -416,23 +426,29 @@
   background-color: #444;
   background-size: cover;
   background-position: center;
+  background-image: url('images/offer-tile.jpg');
   border-radius: 8px;
   color: #fff;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center; /* Align content to the top flex-start */
+  align-items: flex-start; /* Align content to the left */
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+ /* Make tiles equally sized */
+  flex: 1 1 240px; /* Grow, Shrink, and Base Size */
 }
 
 .offer-tile h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: 4px;
+ padding-right: 90px;
   font-weight: bold;
+
 }
 
 .offer-tile p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-light);
 }
 
