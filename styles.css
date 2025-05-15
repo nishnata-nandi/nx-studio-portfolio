@@ -71,11 +71,12 @@ body {
     padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .hire-button {
     background-color: #0073e6;
+    text-decoration: none;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -237,6 +238,12 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+.timeline-content .timeline-company {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
 /* --- Section Divider --- */
 .section-divider {
     border-top: 1px solid #eee; /* Light grey line */
@@ -281,7 +288,7 @@ h2 {
 
 .project p {
     color: #555;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 0;
 }
@@ -348,7 +355,7 @@ h2 {
 .timeline-content p {
     margin-bottom: 8px;
     color: #555;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* --- Project History Section (No changes needed here from the last step) --- */
@@ -366,7 +373,7 @@ h2 {
 
 .accordion-body .project-history-item p {
     color: #555; /* Similar to other paragraph text */
-    font-size: 0.95rem; /* Similar to other paragraph text */
+    font-size: 0.9rem; /* Similar to other paragraph text */
     line-height: 1.5;
     margin-bottom: 0;
 }
